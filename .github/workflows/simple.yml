@@ -1,0 +1,14 @@
+name: Shell Commands
+on: [push]
+jobs:
+  simple-shell-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Echo a string
+        run: echo "Hello Happy World!"
+      - name: Check versions using multi-line command
+        run: |
+          git -v
+          npm -v
+        
+    
