@@ -8,7 +8,7 @@ jobs:
         run: echo "Hello Happy World!"
       - name: Check versions using multi-line command
         run: |
-          git -v
+          node -v
           npm -v
         
     
