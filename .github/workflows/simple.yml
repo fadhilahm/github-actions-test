@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo a string
-        run: echo "Hello Happy World!"
+        run: eccho "Hello Happy World!"
       - name: Check versions using multi-line command
         run: |
           node -v
