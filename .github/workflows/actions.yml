@@ -1,7 +1,7 @@
 name: Simple Github Actions
 on: [push]
 jobs:
-  simple-githubt-actions:
+  simple-github-actions:
     runs-on: ubuntu-latest
     steps:
       - name: List files before checkout
@@ -21,4 +21,3 @@ jobs:
           who-to-greet: Happy World
       - name: Log time
         run: echo "${{ steps.greet.outputs.time }}"
-        
