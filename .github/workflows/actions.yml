@@ -4,6 +4,12 @@ jobs:
   simple-github-actions:
     runs-on: ubuntu-latest
     steps:
+      - name: Inspect variables supplied by GitHub
+        run: |
+          echo "Triggering commit : ${GITHUB_SHA}"
+          echo "Repository        : ${GITHUB_REPOSITORY}"
+          echo "Actions Directory : ${GITHUB_WORKSPACE}"
+          echo "Token             : ${{ github.token }}"
       - name: List files before checkout
         run: |
           pwd
