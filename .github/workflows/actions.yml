@@ -1,5 +1,5 @@
 name: Simple Github Actions
-on: [push]
+on: [push, pull_request]
 jobs:
   simple-github-actions:
     runs-on: ubuntu-latest
