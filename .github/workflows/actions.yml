@@ -1,6 +1,6 @@
 name: Simple Github Actions
 on: 
-  push:
+  # push:
   pull_request:
     types:
       - opened
