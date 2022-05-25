@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Echo production payload
-        run : echo "Environment from client => ${{ github.event.client_payload.env }}""
+        run : echo "Environment from client => ${{ github.event.client_payload.env }}"
       - name: Echo a string
         run: echo "Hello Happy World!"
       - name: Check versions using multi-line command
