@@ -1,9 +1,12 @@
 name: Shell Commands
 on:
   # push:
-  schedule:
+  # schedule:
     # - cron: "0/5 * * * *"
     # - cron: "0/6 * * * *"
+  repository_dispatch:
+    types:
+      - build
 jobs:
   simple-shell-commands:
     runs-on: ubuntu-latest
