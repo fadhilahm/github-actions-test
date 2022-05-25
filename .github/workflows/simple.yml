@@ -1,12 +1,15 @@
 name: Shell Commands
 on:
-  # push:
   # schedule:
     # - cron: "0/5 * * * *"
     # - cron: "0/6 * * * *"
   repository_dispatch:
     types:
       - build
+  push:
+    branches:
+      - "feature/**"
+      - "!feature/c"
 jobs:
   simple-shell-commands:
     runs-on: ubuntu-latest
