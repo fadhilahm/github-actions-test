@@ -2,8 +2,8 @@ name: Shell Commands
 on:
   # push:
   schedule:
-    - cron: "0/5 * * * *"
-    - cron: "0/6 * * * *"
+    # - cron: "0/5 * * * *"
+    # - cron: "0/6 * * * *"
 jobs:
   simple-shell-commands:
     runs-on: ubuntu-latest
