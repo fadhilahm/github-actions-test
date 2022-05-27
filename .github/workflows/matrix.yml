@@ -1,6 +1,9 @@
 name: Matrix
 on:
-  - push
+  push:
+    branches:
+      - feature/**
+      
 jobs:
   set-up-node:
     strategy:
