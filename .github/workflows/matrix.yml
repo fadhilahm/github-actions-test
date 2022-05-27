@@ -27,7 +27,7 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     env:
-      IS_LIGHTWEIGHT: ${{ matrix.is_lightweight || "false" }}
+      IS_LIGHTWEIGHT: ${{ matrix.is_lightweight || false }}
     steps:
       - name: Log node version
         run: node -v
