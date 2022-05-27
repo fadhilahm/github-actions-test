@@ -23,11 +23,11 @@ jobs:
           - os: macos-latest
             node_version: 8
       fail-fast: false
-      max-parallel: 3
+      max-parallel: 10
 
     runs-on: ${{ matrix.os }}
     env:
-      IS_LIGHTWEIGHT: ${{ matrix.is_lightweight || false }}
+      IS_LIGHTWEIGHT: ${{ matrix.is_lightweight || 'false' }}
     steps:
       - name: Log node version
         run: node -v
