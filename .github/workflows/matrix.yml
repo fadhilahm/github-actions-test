@@ -13,7 +13,21 @@ jobs:
           - 6
           - 8
           - 10
+        include:
+          - os: ubuntu-latest
+            node_version: 6
+            is_lightweight: "true"
+        exclude:
+          - os: windows-latest
+            node_version: 6
+          - os: macos-latest
+            node_version: 8
+      fail-fast: false
+      max-parallel: 3
+
     runs-on: ${{ matrix.os }}
+    env:
+      IS_LIGHTWEIGHT: ${{ matrix.is_lightweight || "false" }}
     steps:
       - name: Log node version
         run: node -v
@@ -23,3 +37,5 @@ jobs:
           node-version: ${{ matrix.node_version }}
       - name: Log node version after update
         run: node -v
+      - name: Log light-weightedness
+        run: echo "Is this OS lightweight? ${IS_LIGHTWEIGHT}"
