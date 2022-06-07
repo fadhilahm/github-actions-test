@@ -8,13 +8,17 @@ jobs:
     steps:
       - name: Log node version
         run: node -v
-      - name: Step with docker
+      - name: HW from docker
         uses: docker://node:12.14.1-alpine3.10
         with:
           entrypoint: /bin/echo
           args: Hello World
-      - name: Step with docker
+      - name: Log node version inside docker
         uses: docker://node:12.14.1-alpine3.10
         with:
           entrypoint: /usr/local/bin/node
           args: -v
+      - name: Call script
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: ./script.sh
