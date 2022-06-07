@@ -1,28 +1,20 @@
 name: Docker Container
 on: push
 jobs:
-  docker-container:
+  container-steps:
     runs-on: ubuntu-latest
-    services:
-      app:
-        image: alialaa17/node-api
-        ports:
-          - 3001:3000
-      mongo:
-        image: mongo
-        ports:
-          - "27017:27017"
+    container:
+      image: node:10.18.0-jessie
     steps:
-      - name: Log node version and OS information
-        run: |
-          node -v
-          cat /etc/os-release
-      - name: Post a user
-        run: >
-          curl 
-          -X POST 
-          http://localhost:3001/api/user -H 
-          'Content-Type: application/json' 
-          -d '{"username":"username","address":"address"}'
-      - name: Get user
-        run: curl http://localhost:3001/api/users
+      - name: Log node version
+        run: node -v
+      - name: Step with docker
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: /bin/echo
+          args: Hello World
+      - name: Step with docker
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: /usr/local/bin/node
+          args: -v
